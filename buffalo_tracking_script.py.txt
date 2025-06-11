@@ -1,0 +1,19 @@
+# Buffalo Tracking Courier Script
+# For more details, visit: https://thebuffalotracking.co.za
+
+tracking_db = {
+    "12345": "Package is in transit.",
+    "67890": "Package has been delivered.",
+    "11223": "Package is awaiting pickup."
+}
+
+def track_package(tracking_number):
+    if tracking_number in tracking_db:
+        return tracking_db[tracking_number]
+    else:
+        return "Tracking number not found."
+
+# Main function to run the script
+tracking_number = input("Enter your tracking number: ")
+status = track_package(tracking_number)
+print(f"Status: {status}")
